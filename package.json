@@ -1,5 +1,5 @@
 {
-  "name": "com.solidalloy.util",
+  "name": "com.defcon1.solidalloy.util",
   "version": "1.31.0",
   "displayName": "Solid Utilities",
   "description": "Different utilities that simplify development in Unity3D",
@@ -9,7 +9,7 @@
     "helper"
   ],
   "author": {
-    "name": "SolidAlloy",
+    "name": "Defcon1",
     "url": "https://github.com/SolidAlloy/"
   },
   "type": "tool"
