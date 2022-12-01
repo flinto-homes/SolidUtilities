@@ -2,7 +2,7 @@
     "name": "SolidUtilities.Editor",
     "rootNamespace": "SolidUtilities.Editor",
     "references": [
-        "GUID:b73ef07971851e14fa74ae50b76f8225"
+        "SolidUtilities"
     ],
     "includePlatforms": [
         "Editor"
@@ -10,7 +10,9 @@
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
-    "precompiledReferences": [],
+    "precompiledReferences": [
+        "UnityEditorInternals.dll"
+    ],
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],

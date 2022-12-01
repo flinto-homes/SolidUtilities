@@ -1,6 +1,6 @@
-﻿namespace GenericScriptableObjects.Usage_Example.Editor
+﻿namespace SolidUtilities.Editor.PropertyDrawers
 {
-    using SolidUtilities.Attributes;
+    using SolidUtilities;
     using UnityEditor;
     using UnityEngine;
 

@@ -1,3 +1,165 @@
+# [1.40.0](https://github.com/SolidAlloy/SolidUtilities/compare/1.39.0...1.40.0) (2022-07-24)
+
+
+### Bug Fixes
+
+* Fixed exception when passing null array to ArrayHelper.Add() ([38c5068](https://github.com/SolidAlloy/SolidUtilities/commit/38c5068e9df3355211d48f08feb3efcb3522bf9c))
+* Improved performance of ListHelper.EmptyList<T>() ([bb218be](https://github.com/SolidAlloy/SolidUtilities/commit/bb218be452264f4ef82d82db65fdbd367cfd7f4d))
+* Resolved a GUID conflict with old SerializableDictionary ([a967057](https://github.com/SolidAlloy/SolidUtilities/commit/a967057ec472130101c8ac24f762523eee4aa18c))
+
+
+### Features
+
+* Added SerializedObject.SetHideFlagsPersistently() extension method ([0965d89](https://github.com/SolidAlloy/SolidUtilities/commit/0965d89bf71c0d6ee97f4c9d1ed31e658b6c0ccf))
+* Switched from GUID to assembly names in asmdefs ([67002a9](https://github.com/SolidAlloy/SolidUtilities/commit/67002a9d4b05e616a59bfc9cc826f70a2f07311e))
+
+# [1.39.0](https://github.com/SolidAlloy/SolidUtilities/compare/1.38.2...1.39.0) (2022-06-07)
+
+
+### Features
+
+* Added an option to exclude assembly from editor during import ([5f7dea7](https://github.com/SolidAlloy/SolidUtilities/commit/5f7dea715a639b2f52badcaeafa81a652d6412bc))
+
+## [1.38.2](https://github.com/SolidAlloy/SolidUtilities/compare/1.38.1...1.38.2) (2022-05-19)
+
+
+### Bug Fixes
+
+* Fixed the issue with editor icons disappearing randomly ([fadd6a7](https://github.com/SolidAlloy/SolidUtilities/commit/fadd6a7e82d812db1651885370ee0b1aa9d38078))
+
+## [1.38.1](https://github.com/SolidAlloy/SolidUtilities/compare/1.38.0...1.38.1) (2022-05-13)
+
+
+### Bug Fixes
+
+* Fixed abstract serializable classes not being considered serializable by type.IsUnitySerializable() ([7afc0b2](https://github.com/SolidAlloy/SolidUtilities/commit/7afc0b209383f17725e4c078a1357e8881498198))
+
+# [1.38.0](https://github.com/SolidAlloy/SolidUtilities/compare/1.37.1...1.38.0) (2022-05-13)
+
+
+### Bug Fixes
+
+* Fixed editor icons missing after exiting play mode ([4280803](https://github.com/SolidAlloy/SolidUtilities/commit/42808039419f891d519142c202bdef907ceb7325))
+
+
+### Features
+
+* Added Enum.DoesNotContainFlag() extension method ([24f68bd](https://github.com/SolidAlloy/SolidUtilities/commit/24f68bd24e1f685ec790fc2a0959cfbf2f9d9598))
+
+## [1.37.1](https://github.com/SolidAlloy/SolidUtilities/compare/1.37.0...1.37.1) (2022-05-10)
+
+
+### Bug Fixes
+
+* Fixed incorrect dependency in SolidUtitlites assembly definition ([f8e0bb9](https://github.com/SolidAlloy/SolidUtilities/commit/f8e0bb93a36bfddcf5bef5224b9ecc3c330054b9))
+
+# [1.37.0](https://github.com/SolidAlloy/SolidUtilities/compare/1.36.2...1.37.0) (2022-05-02)
+
+
+### Bug Fixes
+
+* Fixed errors related to read-only scenes during build ([d8a4220](https://github.com/SolidAlloy/SolidUtilities/commit/d8a4220c0cb01809ade44b285a57c0de9ede4ecd))
+* Fixed the prefabs not being found in ProjectWideSearcher ([a916bf1](https://github.com/SolidAlloy/SolidUtilities/commit/a916bf1466dd0b4f392fe65b8747397b0a6e0e55))
+* Replaced buttons of plus-i and plus-s with a less blurry ones ([fa7642d](https://github.com/SolidAlloy/SolidUtilities/commit/fa7642df70fdc1039d8da399d56ab4650701a1a9))
+
+
+### Features
+
+* Added ProjectDependencySearcher that searches for SerializedObjects that will be put in a build, or objects that a scene depends upon, etc. ([f286e4e](https://github.com/SolidAlloy/SolidUtilities/commit/f286e4e674b3598304de5a441ae361df609564a7))
+* Added ProjectDependencySearcher.GetSerializedObjectsFromOpenScenes() method ([a54a6ea](https://github.com/SolidAlloy/SolidUtilities/commit/a54a6ea2bc91191a0edb0bae0e8bdbcb8c7e20e2))
+* Added ProjectWideSearcher that searches for all SerializedObjects in the project, or in a certain scene, prefab, etc. ([ee3da0b](https://github.com/SolidAlloy/SolidUtilities/commit/ee3da0b2a66c29eb6c5ed2663facd2c02bfdc571))
+* Added SerializedPropertyHelper.FindPropertiesOfType() ([fc61190](https://github.com/SolidAlloy/SolidUtilities/commit/fc61190a47cce634b042f6c5a47a1293ed048eb6))
+
+## [1.36.2](https://github.com/SolidAlloy/SolidUtilities/compare/1.36.1...1.36.2) (2022-03-15)
+
+
+### Bug Fixes
+
+* Fixed ReadOnlySpan not being found in Unity 2020.3 and lower ([b2cc6b2](https://github.com/SolidAlloy/SolidUtilities/commit/b2cc6b215b911a7ed1ce93897ae9b45868bf0b5b))
+
+## [1.36.1](https://github.com/SolidAlloy/SolidUtilities/compare/1.36.0...1.36.1) (2022-03-12)
+
+
+### Bug Fixes
+
+* Fixed the compilation error when installing SolidUtilities without Stytem.Runtime.CompilerServices ([b447e9c](https://github.com/SolidAlloy/SolidUtilities/commit/b447e9c808c9c352e8b1210cd9e1728b1dd0a3ff))
+
+# [1.36.0](https://github.com/SolidAlloy/SolidUtilities/compare/1.35.0...1.36.0) (2022-02-12)
+
+
+### Features
+
+* Added EditorHelper.ForceRebuildInspectors() ([8121c2e](https://github.com/SolidAlloy/SolidUtilities/commit/8121c2e22ac23207fdf489d1cfdac88d6c31346d))
+* Added TypeHelper.GetNiceNameOfGenericType() method ([2052bcd](https://github.com/SolidAlloy/SolidUtilities/commit/2052bcd997e9ec323edba014b0fbdf317d530d2b))
+
+# [1.35.0](https://github.com/SolidAlloy/SolidUtilities/compare/1.34.0...1.35.0) (2022-02-03)
+
+
+### Bug Fixes
+
+* Fixed unnecessary garbage allocations in ListHelper.Empty<T> ([8a09a55](https://github.com/SolidAlloy/SolidUtilities/commit/8a09a5585182917c6c57a13536abcbbdb431f2a9))
+* Removed the unnecessary requirement for serializable types to have at least one serialized field ([da8e3bf](https://github.com/SolidAlloy/SolidUtilities/commit/da8e3bf00de7fe3da7bed489ec86240bba3d0219))
+
+
+### Features
+
+* Added an optional icon argument to GUIContentHelper.Temp() ([ede56bd](https://github.com/SolidAlloy/SolidUtilities/commit/ede56bd12488d04e72e8e076a9d3caeb01051f3f))
+* Added AssemblyGeneration class useful for generating assemblies that are not supposed to be auto-referenced ([3b30b54](https://github.com/SolidAlloy/SolidUtilities/commit/3b30b54a22ca4378c163cf237454dbc019b29919))
+* Added AssetDatabaseHelper.DisabledScope() for disabling asset database temporarily ([4727f9d](https://github.com/SolidAlloy/SolidUtilities/commit/4727f9df5eb05921c325345219000c118481da71))
+* Added AssetDatabaseHelper.GetUniqueGUID() method ([b644fd8](https://github.com/SolidAlloy/SolidUtilities/commit/b644fd86b73a20db3bc668e7a979df17c8c30c80))
+* Added DrawerWithModes property drawer ([2ebe4e7](https://github.com/SolidAlloy/SolidUtilities/commit/2ebe4e7261fdf226fb575b28801c3b3d2290ec0b))
+* Added Enumerable.SelectWhere() extension method ([02c02c9](https://github.com/SolidAlloy/SolidUtilities/commit/02c02c94af6169ce4bc0d1080332650f5c01ea10))
+* Added IEnumerable interface for ReadOnlySpan<T> and Split() extension method ([6b6241d](https://github.com/SolidAlloy/SolidUtilities/commit/6b6241d8b4c7dc00b8e4b09139baaa52dd59b9ca))
+* Added new icons to EditorIcons: AddButtonS and AddButtonI ([8c19edf](https://github.com/SolidAlloy/SolidUtilities/commit/8c19edfd5dfd2372360c0f017f62f1380e4c2958))
+* Added SerializedProperty.GetParent(), GetObjectType, GetFieldInfo, GetObject methods ([ce3394a](https://github.com/SolidAlloy/SolidUtilities/commit/ce3394a1dcb7ec1000020c169affcfd35080a986))
+* Added string.GetSubstringBefore(char character) extension method ([79ef45e](https://github.com/SolidAlloy/SolidUtilities/commit/79ef45e39089482ba28abdc695c195afa1f1eff3))
+* Added the ArrayHelper class with methods that allow changing the size of the array ([cebdd0f](https://github.com/SolidAlloy/SolidUtilities/commit/cebdd0f601895394c0dd7c015792ea9905fc17a3))
+* Added the EditorHelper.GetCurrentMousePosition() method ([8d154df](https://github.com/SolidAlloy/SolidUtilities/commit/8d154df8e6dd4339101f9217ecd65d163c6b9a9c))
+* Added the GUIContentHelper.Temp(text, tooltip) method ([585544d](https://github.com/SolidAlloy/SolidUtilities/commit/585544d303e1163f5e11ee6da1d32a34afd794dc))
+* Added the string.GetSubstringBeforeLast extension method ([cd45460](https://github.com/SolidAlloy/SolidUtilities/commit/cd45460e41feaabcea62f459386fa0809b28466e))
+
+# [1.34.0](https://github.com/SolidAlloy/SolidUtilities/compare/1.33.1...1.34.0) (2021-11-21)
+
+
+### Features
+
+* Replaced KeysCollection and ValuesCollection in FastIterationDictionary with IKeysValuesHolder interface ([4bd56af](https://github.com/SolidAlloy/SolidUtilities/commit/4bd56af6014ab97ee4ab184a9f832d1d74e4e150))
+
+## [1.33.1](https://github.com/SolidAlloy/SolidUtilities/compare/1.33.0...1.33.1) (2021-10-22)
+
+
+### Bug Fixes
+
+* Fixed MissingReferenceException on MacOS ([16a2fd3](https://github.com/SolidAlloy/SolidUtilities/commit/16a2fd3253f16fba03b5dd66b37704f65c1fc249))
+
+# [1.33.0](https://github.com/SolidAlloy/SolidUtilities/compare/1.32.2...1.33.0) (2021-10-13)
+
+
+### Features
+
+* Added the Rect.Contains(Rect otherRect) extension method ([b860bc5](https://github.com/SolidAlloy/SolidUtilities/commit/b860bc559de57d5947b35e9e46b38445e2ea5448))
+
+## [1.32.2](https://github.com/SolidAlloy/SolidUtilities/compare/1.32.1...1.32.2) (2021-09-29)
+
+
+### Bug Fixes
+
+* Fixed MissingReferenceException sometimes being reported in EditorIcons on MacOS ([a363c70](https://github.com/SolidAlloy/SolidUtilities/commit/a363c70cb8b700bb6e8ab7b1aad92caea0af905f))
+
+## [1.32.1](https://github.com/SolidAlloy/SolidUtilities/compare/1.32.0...1.32.1) (2021-09-26)
+
+
+### Bug Fixes
+
+* Fixed the correct type not being found in MonoScript if the class was not the first in the file ([4703bb0](https://github.com/SolidAlloy/SolidUtilities/commit/4703bb06db067e57e94f301d568c571790b56e58))
+
+# [1.32.0](https://github.com/SolidAlloy/SolidUtilities/compare/1.31.0...1.32.0) (2021-08-28)
+
+
+### Features
+
+* Added ability to draw additional fields in the build settings window ([f6ba5e9](https://github.com/SolidAlloy/SolidUtilities/commit/f6ba5e9085d688f28dc296996af40d768af898d9))
+
 # [1.31.0](https://github.com/SolidAlloy/SolidUtilities/compare/1.30.0...1.31.0) (2021-08-22)
 
 

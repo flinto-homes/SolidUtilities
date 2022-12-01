@@ -1,7 +1,7 @@
-﻿namespace SolidUtilities.Editor.Helpers
+﻿namespace SolidUtilities.Editor
 {
     using System;
-    using Extensions;
+    using Editor;
     using JetBrains.Annotations;
     using UnityEditor;
 
@@ -23,6 +23,50 @@
             var script = AssetDatabase.LoadAssetAtPath<MonoScript>(assetPath);
 
             return script == null ? null : script.GetClassType();
+        }
+        
+        /// <summary>
+        /// Returns a unique GUID that is known to have no conflicts with the existing assets, so that you create a new asset manually.
+        /// </summary>
+        /// <returns>A unique asset GUID.</returns>
+        public static string GetUniqueGUID()
+        {
+            GUID newGUID;
+
+            do
+            {
+                newGUID = GUID.Generate();
+            }
+            while ( ! string.IsNullOrEmpty(AssetDatabase.GUIDToAssetPath(newGUID.ToString())));
+
+            return newGUID.ToString();
+        }
+
+        /// <summary>
+        /// Completely prevents AssetDatabase from importing assets or refreshin.
+        /// </summary>
+        /// <returns>Instance of a disposable struct.</returns>
+        [PublicAPI]
+        public static DisabledAssetDatabase DisabledScope() => new DisabledAssetDatabase(default);
+        
+        /// <summary>
+        /// Completely prevents AssetDatabase from importing assets or refreshing.
+        /// </summary>
+        public readonly struct DisabledAssetDatabase : IDisposable
+        {
+            public DisabledAssetDatabase(bool _)
+            {
+                EditorApplication.LockReloadAssemblies();
+                AssetDatabase.DisallowAutoRefresh();
+                AssetDatabase.StartAssetEditing();
+            }
+
+            public void Dispose()
+            {
+                AssetDatabase.StopAssetEditing();
+                AssetDatabase.AllowAutoRefresh();
+                EditorApplication.UnlockReloadAssemblies();
+            }
         }
     }
 }

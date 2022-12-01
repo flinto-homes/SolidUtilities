@@ -1,4 +1,4 @@
-﻿namespace SolidUtilities.Editor.Extensions
+﻿namespace SolidUtilities.Editor
 {
     using JetBrains.Annotations;
     using UnityEditor;
@@ -22,6 +22,15 @@
             rect.y += lineHeight + paddingBetweenFields;
 
             return rect;
+        }
+
+        [PublicAPI]
+        public static bool Contains(this Rect rect, Rect otherRect)
+        {
+            return rect.xMin <= otherRect.xMin
+                   && rect.yMin <= otherRect.yMin
+                   && rect.xMax >= otherRect.xMax
+                   && rect.yMax >= otherRect.yMax;
         }
     }
 }
