@@ -1,0 +1,46 @@
+name: 'Publish Solid Utilities package to the orgs Github and Verdaccio Registries'
+on:
+  push:
+    tags: ['v[0-9]+.[0-9]+.[0-9]+']
+env:
+  package-root-folder: './'
+permissions:
+    contents: read 
+jobs:
+  publish-github:
+    runs-on: ubuntu-latest
+    name: 'Publish to Github Registry'
+    steps:
+      - name: 'Checkout this repo'
+        uses: actions/checkout@v2
+      - name: 'Checkout private custom actions'
+        uses: actions/checkout@v2
+        with:
+          repository: ${{ github.repository_owner }}/custom-github-actions
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          path: ./custom-github-actions/
+          ref: main
+      - name: 'Publish NPM package'
+        uses: ./custom-github-actions/.github/actions/publish-npm-package
+        with:
+          registry-url: 'https://npm.pkg.github.com/@${{ github.repository_owner }}'
+          package-root-folder: '${{ env.package-root-folder }}'
+          node-auth-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+  publish-verdaccio:
+    runs-on: ubuntu-latest
+    name: 'Publish to Verdaccio Registry'
+    steps:
+      - name: 'Checkout this repo'
+        uses: actions/checkout@v2
+      - name: 'Checkout private publish action'
+        uses: actions/checkout@v2
+        with:
+          repository: ${{ github.repository_owner }}/custom-github-actions
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          path: ./custom-github-actions
+      - name: 'Publish NPM package'
+        uses: ./custom-github-actions/.github/actions/publish-npm-package
+        with:
+          registry-url: '${{ secrets.VERDACCIO_URL }}'
+          package-root-folder: '${{ env.package-root-folder }}'
+          node-auth-token: ${{ secrets.VERDACCIO_TOKEN }}
