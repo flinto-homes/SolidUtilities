@@ -1,7 +1,7 @@
 name: 'Publish Solid Utilities package to the orgs Github and Verdaccio Registries'
 on:
   push:
-    tags: ['v[0-9]+.[0-9]+.[0-9]+']
+    tags: ['v[0-9]+.[0-9]+.[0-9]+*']
 env:
   package-root-folder: './'
 permissions:
